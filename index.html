@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Tmux, Vim e altri</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Tmux, Vim e altri</h1>
+      </section>
+
+      <section>
+        <h2>Fish</h2>
+        <p class="fragment">Tipo Zsh, ma piu' evoluto (funzioni, alias, ecc)</p>
+        <p class="fragment">I plugin di Zsh sono Fish-like, quindi?</p>
+        <p class="fragment">Auto suggestions e Auto completion</p>
+        <p class="fragment">Non per principianti</p>
+        <p class="fragment">L'autocomplete e' intelligente</p>
+        <aside class="notes">
+          smug...
+          gco
+        </aside>
+      </section>
+
+      <section>
+        <h2>Tmux</h2>
+        <p class="fragment">tmux is a terminal multiplexer. It lets you switch easily between several programs in one
+          terminal, detach
+          them (they keep running in the backround) and reattach them to a different terminal.</p>
+        <aside class="notes">
+          notes
+        </aside>
+      </section>
+
+      <section>
+        <h3>Sessions</h3>
+        <div>
+          <pre>
+            <code data-trim data-noescape>
+              tmux new | nuova sessione
+              ctrl+a d | detach
+              tmux new -s session_name | crea con nome
+              ctrl+a s | lista sessioni
+              cd ~/Works/presentazione_vim/
+              ctrl+a s | lista sessioni
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section>
+        <h3>Windows</h3>
+        <div>
+          <pre>
+            <code data-trim data-noescape>
+              ctrl+a c | crea
+              ctrl+a , | rinomina
+              ctrl+a w | lista finestre
+              ctrl+a p | precedente
+              ctrl+a n | successiva
+              ctrl+a 0...n | seleziona finestra n
+              ctrl+a & | chiudi finestra
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <p>Esistono anche i pannelli ma non li uso</p>
+          <p class="fragment">Esistono innumerevoli personalizzazioni e plugin (browser)</p>
+        </div>
+        <aside class="notes">
+          Mi ha cambiato la vita? No. Ma...
+        </aside>
+      </section>
+
+      <section>
+        <h2>Smug</h2>
+        <div>
+          <p>Diamo un senso a tmux</p>
+        </div>
+        <div>
+          <p class="fragment">Permette di salvare un file di config per ogni sessione di tmux</p>
+          <p class="fragment">Ogni file permette di iniziare una sessione con diversi layout, finestre e pannelli</p>
+          <p class="fragment">Utile soprattutto per salvarsi i comandi con paramentri</p>
+          <p class="fragment">Rispetto a tmuxinator ha l'opzione per le finestre manuali</p>
+          <p class="fragment">Potrebbe diventare uno standard dei progetti e avere sempre un file di config nella repo
+          </p>
+        </div>
+        <div>
+        </div>
+        <aside class="notes">
+          cd ~/.config/smug/ && ll
+          nvim
+          presentazione_vim.yml
+          uhubs-backend.yml
+          tool-reseller-api.yml
+        </aside>
+      </section>
+
+      <section>
+        <h2><span class="fragment fade-right">Neo</span>Vim</h2>
+        <p class="fragment">Una variante di Vim con al suo interno un linguaggio di programmazione vero e proprio (Lua)
+        </p>
+        <p class="fragment">Vi, Vim, Neovim, ... </p>
+        <p class="fragment">Stica##i</p>
+        <p class="fragment">Permette plugin piu' potenti e operazioni asincrone</p>
+        <p class="fragment">Pero'...</p>
+        <ul class="fragment">
+          <li>Ubiquitous</li>
+          <li>Server</li>
+          <li>Vim mode</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Perche' Vim</h3>
+        <p class="fragment">Elimina un layer tra il mio pensiero e i comandi dell'editor</p>
+        <p class="fragment">Ha un'elevata espressivita'</p>
+        <p class="fragment">Per la maggior parte del tempo non scriviamo codice ma lo modifichiamo, e pensiamo a come
+          agire su pezzi di codice e non per lettere</p>
+      </section>
+
+      <section>
+        <h3>Introduzione a Vim</h3>
+        <p class="fragment">4 Modi: Normal, Insert, Visual, Command</p>
+        <p class="fragment">Verbs + modifiers + nouns</p>
+        <aside class="notes">
+          https://yanpritzker.com/learn-to-speak-vim-verbs-nouns-and-modifiers-d7bfed1f6b2d
+          L'aumento delle possibilita' e' esponenziale.
+        </aside>
+      </section>
+
+      <section>
+        <h3>Cose fiche di Vim</h3>
+        <p class="fragment">Registers</p>
+        <p class="fragment">Marks</p>
+        <p class="fragment">Macro</p>
+        <p class="fragment">Terminal</p>
+        <p class="fragment">J</p>
+        <p class="fragment">Jump</p>
+      </section>
+
+      <section>
+        <h3>Vim oltre l'editor di testo</h3>
+        <p class="fragment">Lavorare con piu' file</p>
+        <pre class="fragment">
+          <code data-trim data-noescape>
+            set path+=**
+            set wildmenu
+            syntax on
+            filetype on
+          </code>
+        </pre>
+        <p class="fragment">Auto completamento da piu' fonti (dizionario, file, progetto)</p>
+        <aside class="notes">
+          https://www.youtube.com/watch?v=XA2WjJbmmoM
+          https://www.youtube.com/watch?v=3TX3kV3TICU
+        </aside>
+      </section>
+
+      <section>
+        <h3>Da editor ad IDE</h3>
+        <p class="fragment">Telescope</p>
+        <p class="fragment">LSP</p>
+        <p class="fragment">Treesitter</p>
+        <p class="fragment">Test</p>
+        <p class="fragment">Debugger</p>
+        <aside class="notes">
+          https://github.com/nvim-telescope/telescope.nvim
+          https://github.com/neovim/nvim-lspconfig
+          https://github.com/nvim-treesitter/nvim-treesitter
+          https://github.com/klen/nvim-test
+          https://github.com/mfussenegger/nvim-dap
+        </aside>
+      </section>
+
+      <section>
+        <h3>Distribuzioni Neovim</h3>
+        <p class="fragment">Lazyvim</p>
+        <p class="fragment">Astrovim</p>
+        <p class="fragment">File di configurazione</p>
+      </section>
+
+      <section>
+        <h2>Tool da terminale</h2>
+        <pre>
+          <code data-trim data-noescape>
+            https://dev.to/marcobehler/7-great-terminalcli-tools-not-everyone-knows-3446
+          </code>
+        </pre>
+
+      </section>
+
+      <section>
+        <h2>Documentazione</h2>
+        <ul style="font-size: 20px;">
+          <li><strong>Fish:</strong> <span>https://fishshell.com/</span></li>
+          <li><strong>Tmux:</strong> <span>https://github.com/tmux/tmux/wiki</span></li>
+          <li><strong>Tmux Cheatsheet:</strong> <span>https://tmuxcheatsheet.com/</span></li>
+          <li><strong>Smug:</strong> <span>https://github.com/ivaaaan/smug</span></li>
+          <li><strong>Mastering the Vim language:</strong> <span>https://www.youtube.com/watch?v=wlR5gYd6um0</span>
+          </li>
+          <li><strong>Verbs + modifiers + nouns:</strong>
+            <span>https://yanpritzker.com/learn-to-speak-vim-verbs-nouns-and-modifiers-d7bfed1f6b2d</span>
+          </li>
+          <li><strong>Vim Macros:</strong> <span>https://www.youtube.com/watch?v=ZMA6MghrpWM</span></li>
+          <li><strong>How to Do 90% of What Plugins Do:</strong>
+            <span>https://www.youtube.com/watch?v=XA2WjJbmmoM</span>
+          </li>
+          <li><strong>Let Vim Do the Typing:</strong> <span>https://www.youtube.com/watch?v=3TX3kV3TICU</span></li>
+          <li><strong>Telescope:</strong> <span>https://github.com/nvim-telescope/telescope.nvim</span></li>
+          <li><strong>LSP:</strong> <span>https://github.com/neovim/nvim-lspconfig</span></li>
+          <li><strong>Treesitter:</strong> <span>https://github.com/nvim-treesitter/nvim-treesitter</span></li>
+          <li><strong>Test:</strong> <span>https://github.com/klen/nvim-test</span></li>
+          <li><strong>Debugger:</strong> <span>https://github.com/mfussenegger/nvim-dap</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>
